@@ -8,4 +8,4 @@
 
 -- Learning Mode--
 
-For the learning mode, you can reset and delete model.csv, and just tap "1" on your keyboard when you show the good hand gesture to the camera. After that, in the terminal you can enter the name of the sign. The name will automaticly be saved with the good sign
+For the learning mode, you can delete all lines of model.csv exept the 1st it's very important. After that just tap "1" on your keyboard when you show the good hand gesture to the camera. After that, in the terminal you can enter the name of the sign. The name will automaticly be saved with the good sign
