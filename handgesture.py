@@ -1,4 +1,3 @@
-
 from collections import Counter
 import math
 import csv
@@ -102,26 +101,29 @@ while True:
 
      listgest.append(up)
      listgest.append(down)
-   #   print(listgest)
      
    # ['0', '5'] -- > 
    # ['INDEX FINGER TIP', 'PINKY TIP', '3', '2'] --> 
    # ['INDEX FINGER TIP', 'MIDDLE FINGER TIP', '3', '2'] -->
    # ['MIDDLE FINGER TIP', '1', '4'] -->
-   # ['INDEX FINGER TIP', 'MIDDLE FINGER TIP', 'RING FINGER TIP', 'PINKY TIP', '5', '0'] --> 
+   # ['INDEX FINGER TIP', 'MIDDLE FINGER TIP', 'RING FINGER TIP', 'PINKY TIP', '5', '0'] -->
 
+
+     if len(listgest) > 6:
+        listgest = []
    
      with open('./model.csv',encoding='utf-8-sig') as f:
         keypoint_classifier_labels = csv.reader(f)
         for row in keypoint_classifier_labels:
            gesturecsv = row[:(len(row)-1)]
          #   print(gesturecsv)
+           print(listgest)
            gest = row[(len(row)-1):]
          #   print(gest)
            gesturecsv = list(map(maybeMakeNumber, gesturecsv))
            if listgest == gesturecsv:
               cv2.putText(frame1, "GESTE :"+str(gest), (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (255, 255, 255), 2, cv2.LINE_AA)
-            
+      
      
      cv2.imshow("Frame", frame1);
      key = cv2.waitKey(1) & 0xFF
